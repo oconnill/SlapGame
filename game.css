@@ -2,3 +2,14 @@
 .enemy-image {
     padding-top: 20px
 }
+
+.status-bar {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+participants {
+    display: flex;
+    justify-content: center
+}

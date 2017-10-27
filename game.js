@@ -1,46 +1,72 @@
-var health = 100
-var name = 'Enemy'
-var hits = 0
 
-function Player(name, health, slap, punch, kick){
+
+//Character Creator 
+function Player(name, health, hits) {
     this.name = name
     this.health = health,
-    this.attacks = {
-        slap: slap,
-        punch: punch,
-        kick: kick
+    this.hits = hits
+    this.items = []
+}
+
+//Item Creator
+function Item(name, mod, description) {
+    this.name = name
+    this.mod = mod,
+    this.description = description
+}
+
+//2 New Players
+var player1 = new Player('user', 100, 0)
+var monster = new Player('computer', 100, 0)
+
+//New Item!
+
+var items = {
+    shield: new Item('shield',4, "gold shield" ),
+    helmet: new Item('helmet',2, "bronze helmet" )
     }
-  
+
+
+function giveItem(){
+    monster.items.push(items.shield)
+}
+
+function addMods(){
+    var total = 0
+    for(var i = 0; i < monster.items.length; i ++){
+
+    }
 }
 
 
-function slap(){
-    health -= 1
-    hits += 1
+function slap(monster){
+    monster.health -= 1
+    monster.hits += 1
     update()
     return 
 }
 
-function punch(){
-    health -= 5
-    hits += 5
+function punch(monster){
+    monster.health -= 5
+    monster.hits += 5
     update()
     return 
 }
 
-function kick(){
-    health -= 10
-    hits += 10
+function kick(monster){
+    monster.health -= 10
+    monster.hits += 10
     update()
     return 
 }
 
 function update(){
-    document.getElementById('hits').innerText = hits
-    if(health >= 0){
-        return document.getElementById('health').innerText = health
+    document.getElementById('monster-hits').innerText = monster.hits
+    if(monster.health >= 0){
+        return document.getElementById('monster-health').innerText = monster.health
     }
     else{
-        return document.getElementById('health').innerText = 'DEAD!'
+        return document.getElementById('monster-health').innerText = 'DEAD!'
     }
+    
 }

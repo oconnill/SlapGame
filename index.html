@@ -9,22 +9,52 @@
 </head>
 
 <body>
-	<div class="health-bar text-center">Health:
-		<span id='health'>--</span>
-	</div>
-	<div class="enemy text-center">Hits:
-			<span id='hits'>--</span>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 participants text-center">
+				<h1>Player</h1>
+			</div>
+			<div class="col-sm-6 participants text-center">
+				<h1>Monster</h1>
+			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center status-bar">
+				<div class="player1">
+					<div class="health-bar">Health:
+						<span id='player1-health'>--</span>
+					</div>
+					<div class="enemy">Hits:
+						<span id='player1-hits'>--</span>
+					</div>
+				</div>
+				<div class="monster">
+					<div class="health-bar">Health:
+						<span id='monster-health'>--</span>
+					</div>
+					<div class="enemy">Hits:
+						<span id='monster-hits'>--</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="enemy-image text-center">
+		<img src="http://via.placeholder.com/200x450">
 		<img src="http://via.placeholder.com/200x450">
 	</div>
 	<br>
 	<div class="attack-button text-center">
-		<button onclick="slap(health)">Slap</button>
-		<button onclick="punch(health)">Punch</button>
-		<button onclick="kick(health)">Kick</button>
+		<button onclick="slap(monster)">Slap</button>
+		<button onclick="punch(monster)">Punch</button>
+		<button onclick="kick(monster)">Kick</button>
 	</div>
-
+	<br>
+	<div class="mod-button text-center">
+			<button onclick=" ">Heal</button>
+			<button onclick=" ">Shield</button>
+			<button onclick=" ">Helmet</button>
+		</div>
 	<div class="kick-button text-center">
 
 
