@@ -1,12 +1,18 @@
 
-
-//Character Creator 
-function Player(name, health, hits) {
+function Player(name, health, slap, punch, kick){
     this.name = name
     this.health = health,
-    this.hits = hits
+    this.attacks = {
+        slap: slap,
+        punch: punch,
+        kick: kick
+    }
+    this.hits = 0
     this.items = []
+  
 }
+
+var monster = new Player('monster', 100, 1, 5, 10)
 
 //Item Creator
 function Item(name, mod, description) {
@@ -15,58 +21,73 @@ function Item(name, mod, description) {
     this.description = description
 }
 
-//2 New Players
-var player1 = new Player('user', 100, 0)
-var monster = new Player('computer', 100, 0)
-
-//New Item!
 
 var items = {
-    shield: new Item('shield',4, "gold shield" ),
-    helmet: new Item('helmet',2, "bronze helmet" )
+    mental: new Item('Mental Block',-.4, "Lose 4 Health" ),
+    strategy: new Item('Strategy',.6, "Strategy adds 3 Health" ),
+    focus: new Item('Focus',.5, "Adds 2 health" )
     }
 
 
-function giveItem(){
-    monster.items.push(items.shield)
+function giveItem(player, name){
+   player.items.push(items[name])
 }
 
+/*Add modifiers to character also return a value of 1 when no modifiers are added to not effect intial attack */
 function addMods(){
     var total = 0
     for(var i = 0; i < monster.items.length; i ++){
-
+    var adding = monster.items[i]
+        total += adding.mod
     }
+    if(total >= 1.5){
+    return total = 2
+      }
+  if(total === 0){
+      return total += 1
+  }
+    return total 
 }
 
 
-function slap(monster){
-    monster.health -= 1
-    monster.hits += 1
-    update()
-    return 
-}
 
-function punch(monster){
-    monster.health -= 5
-    monster.hits += 5
-    update()
-    return 
-}
-
-function kick(monster){
-    monster.health -= 10
-    monster.hits += 10
-    update()
-    return 
+function action(move, player){
+    if(move == 'slap'){
+        player.health -=  player.attacks[move] * addMods()
+        player.hits += 1
+        update()
+        return
+    }
+        if(move == 'punch'){
+        player.health -=  player.attacks[move] * addMods()
+        player.hits += 1
+        update()
+        return
+    }
+        if(move == 'kick'){
+        player.health -=  player.attacks[move] * addMods()
+        player.hits += 1
+        update()
+        return
+    }
 }
 
 function update(){
-    document.getElementById('monster-hits').innerText = monster.hits
-    if(monster.health >= 0){
-        return document.getElementById('monster-health').innerText = monster.health
+    document.getElementById('hits').innerText = monster.hits
+    if(monster.health >= 120){
+        return document.getElementById('health').innerText = "MAX SPECIALS!"
     }
+    if(monster.health >= 1){
+        return document.getElementById('health').innerText = monster.health
+    }
+
     else{
-        return document.getElementById('monster-health').innerText = 'DEAD!'
+        return document.getElementById('health').innerText = 'DEAD!'
     }
-    
 }
+
+console.log(monster)
+
+
+
+
