@@ -71,6 +71,14 @@ function action(move, player){
         return
     }
 }
+//reset button that removes modifier items also clears game
+
+function reset(player){
+    player.health = 100
+    player.hits = 0
+    player.items = []
+    update()
+  }
 
 function update(){
     document.getElementById('hits').innerText = monster.hits

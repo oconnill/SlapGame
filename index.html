@@ -1,42 +1,45 @@
 <html>
-	
-		<head>
-			<title>Slap Object Game</title>
-			<link rel="stylesheet" href="game.css">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-			 crossorigin="anonymous">
+
+<head>
+	<title>Slap Object Game</title>
+	<link rel="stylesheet" href="game.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="health-bar text-center">Health:
+		<span id='health'>--</span>
+	</div>
+	<div class="enemy text-center">Hits:
+		<span id='hits'>--</span>
+	</div>
+	<div class="enemy-image text-center">
+		<img src="http://via.placeholder.com/200x450">
+	</div>
+	<br>
+	<div class="attack-button text-center">
+		<button onclick="action('slap',monster)">Slap</button>
+		<button onclick="action('punch', monster)">Punch</button>
+		<button onclick="action('kick', monster)">Kick</button>
+	</div>
+	<br>
+	<div class="mod-button text-center">
+		<button onclick="giveItem(monster, 'focus')">Focus</button>
+		<button onclick="giveItem(monster, 'strategy')">Strategy</button>
+		<button onclick="giveItem(monster, 'mental')">Mental Block</button>
+	</div>
+	<br>
+	<div class="mod-button text-center">
+		<button onclick="reset(monster)">Reset</button>
 		
-		</head>
-		
-		<body>
-			<div class="health-bar text-center">Health:
-				<span id='health'>--</span>
-			</div>
-			<div class="enemy text-center">Hits:
-					<span id='hits'>--</span>
-				</div>
-			<div class="enemy-image text-center">
-				<img src="http://via.placeholder.com/200x450">
-			</div>
-			<br>
-			<div class="attack-button text-center">
-				<button onclick="action('slap',monster)">Slap</button>
-				<button onclick="action('punch', monster)">Punch</button>
-				<button onclick="action('kick', monster)">Kick</button>
-			</div>
-		<br>
-		<div class="mod-button text-center">
-			<button onclick="giveItem(monster, 'focus')">Focus</button>
-			<button onclick="giveItem(monster, 'strategy')">Strategy</button>
-			<button onclick="giveItem(monster, 'mental')">Mental Block</button>
-		</div>
-	
-	
-		
-		
-		
-		
-				<script src="game.js"></script>
-		</body>
-		
-		</html>
+
+
+
+
+
+		<script src="game.js"></script>
+</body>
+
+</html>
