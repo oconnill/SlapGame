@@ -13,3 +13,16 @@ participants {
     display: flex;
     justify-content: center
 }
+
+.spacer {
+    height: 10px
+}
+
+.health-text {
+    padding-top: 20px
+}
+
+#nodots{
+    list-style-type: none;
+    color: red
+}

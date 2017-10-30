@@ -9,37 +9,72 @@
 </head>
 
 <body>
-	<div class="health-bar text-center">Health:
-		<span id='health'>--</span>
-	</div>
-	<div class="enemy text-center">Hits:
-		<span id='hits'>--</span>
-	</div>
-	<div class="enemy-image text-center">
-		<img src="http://via.placeholder.com/200x450">
-	</div>
-	<br>
-	<div class="attack-button text-center">
-		<button onclick="action('slap',monster)">Slap</button>
-		<button onclick="action('punch', monster)">Punch</button>
-		<button onclick="action('kick', monster)">Kick</button>
-	</div>
-	<br>
-	<div class="mod-button text-center">
-		<button onclick="giveItem(monster, 'focus')">Focus</button>
-		<button onclick="giveItem(monster, 'strategy')">Strategy</button>
-		<button onclick="giveItem(monster, 'mental')">Mental Block</button>
-	</div>
-	<br>
-	<div class="mod-button text-center">
-		<button onclick="reset(monster)">Reset</button>
-		
+	<div class="container">
+		<div class="header text-center">
+			<img src="/chextop.png">
+		</div>
+		<div class="row">
+			<div class="col-xs-12 spacer"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="computer text-center">
+					<img src="sovietcomputer.png">
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="health-bar text-center health-text">Health:
+					<span id='health'>--</span>
+					<div class="enemy text-center">Hits:
+						<span id='hits'>--</span>
+					</div>
+					<br>
+					<div class="attack-button text-center">
+						<ul id="nodots">
+							<li>
+								<button class="btn btn-outline-secondary" onclick="action('slap',monster)">Opening Move</button>
+							</li>
+							<br>
+							<li>
+								<button class="btn btn-outline-secondary" onclick="action('punch', monster)">Positional play</button>
+							</li>
+							<br>
+							<li>
+								<button class="btn btn-outline-secondary" onclick="action('kick', monster)">Check</button>
+							</li>
+						</ul>
+					</div>
+					<br>
+					<ul id="nodots">
+						<li>
+							<button type="button" class="btn btn-outline-warning" onclick="giveItem(monster, 'focus')">Focus</button>
+						</li>
+						<br>
+						<li>
+							<button type="button" class="btn btn-outline-warning" onclick="giveItem(monster, 'strategy')">Strategy</button>
+						</li>
+						<br>
+						<li>
+							<button type="button" class="btn btn-outline-warning" onclick="giveItem(monster, 'mental')">Mental Block</button>
+						</li>
+						<br>
+						<li>
+							<button class="btn btn-outline-success" onclick="reset(monster)">Reset</button>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
 
 
 
 
 
-		<script src="game.js"></script>
+
+
+
+			<script src="game.js"></script>
 </body>
 
 </html>
