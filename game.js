@@ -88,7 +88,7 @@ function update() {
         return document.getElementById('health').innerText = "MAX SPECIALS!"
     }
     if (monster.health >= 1) {
-        return document.getElementById('health').innerText = monster.health
+        return document.getElementById('health').innerText =  monster.health
     }
 
     else {
