@@ -92,7 +92,7 @@ function update() {
     }
 
     else {
-        return document.getElementById('health').innerText = 'DEAD!'
+        return document.getElementById('health').innerText = 'CPU LOSES!!'
     }
 }
 
