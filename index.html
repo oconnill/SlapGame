@@ -34,15 +34,15 @@
 					<div class="attack-button text-center">
 						<ul id="nodots">
 							<li>
-								<button class="btn btn-outline-secondary" onclick="action('slap',monster)">Opening Move</button>
+								<button class="btn btn-outline-secondary" onclick="app.controllers.slapController.attack('slap', player)">Opening Move</button>
 							</li>
 							<br>
 							<li>
-								<button class="btn btn-outline-secondary" onclick="action('punch', monster)">Positional play</button>
+								<button class="btn btn-outline-secondary" onclick="app.controllers.slapController.attack('punch', monster)">Positional play</button>
 							</li>
 							<br>
 							<li>
-								<button class="btn btn-outline-secondary" onclick="action('kick', monster)">Check</button>
+								<button class="btn btn-outline-secondary" onclick="app.controllers.slapController.attack('kick', monster)">Check</button>
 							</li>
 						</ul>
 					</div>
@@ -76,7 +76,14 @@
 
 
 
-			<script src="game.js"></script>
+	    <!-- SERVICES -->
+		<script src="app/slap/slap-service.js"></script>
+		
+		<!-- CONTROLLERS -->
+		<script src="app/slap/slap-controller.js"></script>
+	
+		<!-- INIT -->
+		<script src="app/init.js"></script>
 </body>
 
 </html>
